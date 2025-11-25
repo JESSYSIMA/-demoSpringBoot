@@ -2,7 +2,7 @@
 FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /app
 COPY pom.xml .
-COPY src ./src
+COPY src ./demo/src
 RUN mvn clean package -DskipTests
 # Step 2: Create a lightweight runtime image
 FROM eclipse-temurin:17-jdk
